@@ -6,6 +6,8 @@
 'use strict';
 
 // ─── DATA ─────────────────────────────────────
+
+
 const PRODUCTS = [
   { id: 1, name: 'Personalized Wedding Invite-322', price: 45.50, badge: 'New', emoji: '💐', colors: ['#fde8d8','#f9c8a0'] },
   { id: 2, name: 'Personalized Wedding Invite-211', price: 55.00, badge: 'Bestseller', emoji: '🌸', colors: ['#e8f5e8','#c0e0c0'] },
@@ -17,6 +19,8 @@ const PRODUCTS = [
   { id: 8, name: 'Custom Caricature Invite',         price: 75.00, badge: 'Popular', emoji: '🎨', colors: ['#ffe8e8','#f0b0b0'] },
 ];
 
+// Add this ONE line right after your PRODUCTS array
+const WHATSAPP_NUMBER = "917871920405"; // ← replace with your number  
 const INSTA_COLORS = [
   ['#fde8d8','#f0b898'],
   ['#e8d5f0','#c9a8e8'],
@@ -70,6 +74,22 @@ function showToast(msg) {
   toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
 }
 
+// ─── WHATSAPP ORDER ────────────────────────────
+function sendToWhatsApp() {
+  if (cart.length === 0) {
+    showToast('🛒 Your cart is empty!');
+    return;
+  }
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+  let msg = `🛒 *New Order — Vibrant Digital Printers*\n\n*Items:*\n`;
+  cart.forEach((item, i) => {
+    msg += `${i + 1}. ${item.name}\n   Qty: ${item.qty} × ₹${item.price.toFixed(2)} = ₹${(item.price * item.qty).toFixed(2)}\n`;
+  });
+  msg += `\n━━━━━━━━━━━━━━━\n*Total: ₹${total.toFixed(2)}*\n\nPlease confirm my order 🙏`;
+
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+}
 // ─── PRODUCTS GRID ─────────────────────────────
 function getBadgeClass(badge) {
   if (!badge) return '';
@@ -120,6 +140,7 @@ function renderProducts() {
     });
   });
 }
+
 
 // ─── INSTAGRAM GRID ────────────────────────────
 function renderInstagram() {
