@@ -20,7 +20,7 @@
 ];
 */
 // Add this ONE line right after your PRODUCTS array
-const WHATSAPP_NUMBER = "917871920405"; // ← replace with your number  
+
 const PRODUCTS = [
   {
     id: 1,
@@ -431,6 +431,7 @@ function removeFromCart(id) {
 }
 
 // ── SEND TO WHATSAPP ──
+const WHATSAPP_NUMBER = "917871920405"; // ← replace with your number  
 function sendToWhatsApp() {
   if (cart.length === 0) { showToast('🛒 Cart is empty!'); return; }
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
