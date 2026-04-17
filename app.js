@@ -8,7 +8,7 @@
 // ─── DATA ─────────────────────────────────────
 
 
-const PRODUCTS = [
+/*const PRODUCTS = [
   { id: 1, name: 'Personalized Wedding Invite-322', price: 45.50, badge: 'New', emoji: '💐', colors: ['#fde8d8','#f9c8a0'] },
   { id: 2, name: 'Personalized Wedding Invite-211', price: 55.00, badge: 'Bestseller', emoji: '🌸', colors: ['#e8f5e8','#c0e0c0'] },
   { id: 3, name: 'Personalized Wedding Invite-320', price: 35.00, badge: null, emoji: '✨', colors: ['#e8e0f8','#c8b8f0'] },
@@ -18,7 +18,7 @@ const PRODUCTS = [
   { id: 7, name: 'Scroll Wedding Card',              price: 28.00, badge: null, emoji: '📜', colors: ['#f8f0e0','#e8d0a0'] },
   { id: 8, name: 'Custom Caricature Invite',         price: 75.00, badge: 'Popular', emoji: '🎨', colors: ['#ffe8e8','#f0b0b0'] },
 ];
-
+*/
 // Add this ONE line right after your PRODUCTS array
 const WHATSAPP_NUMBER = "917871920405"; // ← replace with your number  
 const PRODUCTS = [
