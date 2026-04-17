@@ -131,24 +131,30 @@
       </div>
 
       <!-- Paste this inside your cart panel, after the items list and total -->
-<button
-  id="whatsappOrderBtn"
-  onclick="sendToWhatsApp()"
-  style="
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-    width: 100%; padding: 13px; margin-top: 12px;
-    background: #25D366; color: white;
-    border: none; border-radius: 10px;
-    font-size: 15px; font-weight: 600; cursor: pointer;
-    transition: background 0.2s;
-  "
-  onmouseover="this.style.background='#1da851'"
-  onmouseout="this.style.background='#25D366'">
-  <svg width="20" height="20" viewBox="0 0 32 32" fill="white">
-    <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.668 4.61 1.832 6.5L4 29l7.768-1.812A11.94 11.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.844 16.406c-.248.697-1.457 1.332-2 1.406-.512.07-1.16.1-1.875-.117-.432-.132-.988-.308-1.695-.602-2.984-1.29-4.93-4.34-5.08-4.543-.145-.203-1.188-1.58-1.188-3.012s.75-2.14 1.016-2.43c.266-.29.582-.363.777-.363l.559.012c.18.008.42-.068.656.5.248.586.844 2.02.918 2.168.074.148.125.32.027.52-.098.203-.148.328-.293.508-.148.18-.312.402-.445.539-.148.148-.305.309-.133.605.172.297.766 1.261 1.645 2.04 1.13 1.012 2.082 1.325 2.375 1.473.293.148.465.125.637-.074.172-.199.73-.852.926-1.148.195-.295.39-.246.656-.148l2.082.984c.293.148.488.223.559.34.074.12.074.687-.172 1.385z"/>
-  </svg>
-  Send Order via WhatsApp
-</button>
+
+<div class="products-grid" id="productsGrid"></div>
+
+<h2 style="margin-top:40px;">🛒 WhatsApp Cart — Demo</h2>
+<p class="note">Add items above, then click "Send Order via WhatsApp"</p>
+
+<div class="cart-panel-demo">
+  <div class="cart-panel-header">
+    <span>Your Cart</span>
+    <span class="cart-count-badge" id="cartCount">0</span>
+  </div>
+  <div id="cartEmptyMsg">Your cart is empty. Add some cards! 🌸</div>
+  <div id="cartItemsList"></div>
+  <div id="cartTotalRow" style="display:none;" class="cart-total-row">
+    <span>Total</span>
+    <span id="cartTotal">₹0</span>
+  </div>
+  <button class="btn-whatsapp" id="whatsappBtn" style="display:none;" onclick="sendToWhatsApp()">
+    <svg width="20" height="20" viewBox="0 0 32 32" fill="white">
+      <path d="M16 3C9.373 3 4 8.373 4 15c0 2.385.668 4.61 1.832 6.5L4 29l7.768-1.812A11.94 11.94 0 0016 28c6.627 0 12-5.373 12-12S22.627 3 16 3zm5.844 16.406c-.248.697-1.457 1.332-2 1.406-.512.07-1.16.1-1.875-.117-.432-.132-.988-.308-1.695-.602-2.984-1.29-4.93-4.34-5.08-4.543-.145-.203-1.188-1.58-1.188-3.012s.75-2.14 1.016-2.43c.266-.29.582-.363.777-.363l.559.012c.18.008.42-.068.656.5.248.586.844 2.02.918 2.168.074.148.125.32.027.52-.098.203-.148.328-.293.508-.148.18-.312.402-.445.539-.148.148-.305.309-.133.605.172.297.766 1.261 1.645 2.04 1.13 1.012 2.082 1.325 2.375 1.473.293.148.465.125.637-.074.172-.199.73-.852.926-1.148.195-.295.39-.246.656-.148l2.082.984c.293.148.488.223.559.34.074.12.074.687-.172 1.385z"/>
+    </svg>
+    Send Order via WhatsApp
+  </button>
+</div>
       <div class="center-action">
         <a href="#" class="btn btn-outline">View All Products</a>
       </div>
